@@ -23,4 +23,4 @@ $dbname = "SGU";
 		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 	}
-	$_POST['fName'] = array();;
+	//$_POST['fName'] = array();

@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>SGU-bookings</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
-<?php
-	include('connect.php');
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	}
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">Bookings</a></li>
+					<li><a href="customers.php">Customers</a></li>
+					<li><a href="kayaks.php">Kayaks</a></li>
+				</ul>
+				
+			</div>
+			
+		</nav>
+	</header>
 
-	
-	$sql = "SELECT * FROM bookings";
-
-	$result = $conn->query($sql);
-
-	if ($result->num_rows > 0) {
-		while($row = $result->fetch_assoc()) 
-
-			{
-
-    			echo  $row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
-			}
-		} else {
-			echo "DIS AIN'T WORKING";
-		};
-
-		$conn->close();
-?>
+<?php include("script.php");?>
 	  
 
 
