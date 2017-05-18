@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>SGU-bookings</title>
+	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
@@ -21,7 +21,32 @@
 		</nav>
 	</header>
 
-<?php include("script.php");?>
+<div class="col-md-10 col-md-offset-1">
+
+<?php
+	include('connect.php');
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	
+	$sql = "SELECT * FROM bookings, customer";
+
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) 
+
+			{
+
+    			echo  $row["fName"]." | ".$row["lName"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
+			}
+		} else {
+			echo "DIS AIN'T WORKING";
+		};
+
+		$conn->close();
+?>
 	  
 
 
@@ -50,6 +75,7 @@
 		<input type="submit" name="submit">
 
 	</form>
+</div>
 
 
 
