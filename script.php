@@ -5,7 +5,7 @@
 	}
 
 	
-	$sql = "SELECT * FROM bookings, customer";
+	$sql = "SELECT * FROM bookings, customers";
 
 	$result = $conn->query($sql);
 
@@ -14,7 +14,7 @@
 
 			{
 
-    			echo  $row["fName"]." | ".$row["lName"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
+    			echo  $row["Name"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
 			}
 		} else {
 			echo "Tim Sug Min KUK";

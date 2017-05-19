@@ -1,0 +1,10 @@
+.box{
+	border: solid black 0.1em;
+	height: 15em;
+	overflow: auto;
+	width: 50em;
+}
+
+.box-inside{
+	padding: 0.5em;
+}
