@@ -41,8 +41,7 @@
 
 						{
 
-			    			echo "<td><a href=\"delete.php?id=".$row['id']."\">Delete</a></td>"; 
-			    			echo	$row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ."-". $row["color"] . "<br/>";
+			    			echo	$row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ." | ". $row["color"] . "<br/>";
 						}
 					} else {
 						echo "DIS AIN'T WORKING";
@@ -77,6 +76,17 @@
 
 		<input type="submit" name="submit">
 
+	</form>
+
+	<form action="delete.php" method="GET">
+		<p>
+			<label for="delete">Delete</label>
+			<input type="text" name="delete">
+		</p>
+
+		<p>
+			<input type="submit" name="submit">
+		</p>
 	</form>
 
 </div>

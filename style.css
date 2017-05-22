@@ -8,3 +8,9 @@
 .box-inside{
 	padding: 0.5em;
 }
+
+.form-control{
+	border-radius: 0px;
+	width: 300px;
+}
+

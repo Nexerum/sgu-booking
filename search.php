@@ -67,6 +67,7 @@ $(document).ready(function(){
     });
 });
 </script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="search-box">

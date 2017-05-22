@@ -35,23 +35,24 @@
 				$sql = "SELECT * FROM bookings";
 
 				$result = $conn->query($sql);
-
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) 
 
 						{
-
-			    			echo  $row["bookingNr"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
+							echo $row["customerNr"]."<br/>";
+			    			//echo  $row["bookingNr"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
+			    			$diss  = $row["customerNr"];
 						}
 					} else {
 						echo "DIS AIN'T WORKING";
 					};
-				$sql = "SELECT FROM customers WHERE customerNr = $row['customerNr']";
+				$sql = "SELECT 'Name' FROM customers WHERE customerNr = '" . $diss . "'";
+				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) 
 
 						{
-
-			    			echo  $row["Name"]."<br/>";
+							echo "NUTS";
+			    			echo  $row["Name"] . "<br/>";
 						}
 					} else {
 						echo "DIS AIN'T WORKING";
@@ -65,7 +66,8 @@
 	  
 
 	<div class="col-md-10 form-group">
-		<div class="col-md-2 customer-form">
+	<br/>
+		<div class="col-md-5 customer-form">
 			<form action="#" method="POST">
 
 				<p>
@@ -87,8 +89,7 @@
 
 			</form>
 		</div>
-			<br/>
-		<div class="col-md-2 col-md-offset-1 bookings-form">
+		<div class="col-md-5 bookings-form">
 			<form class="form-group">
 				<p>
 					<label for="Name">Name</label>
