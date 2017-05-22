@@ -33,7 +33,8 @@
 						}
 
 						
-						$sql = "SELECT * FROM customer";
+
+						$sql = "SELECT * FROM customers";
 
 						$result = $conn->query($sql);
 
@@ -41,6 +42,7 @@
 							while($row = $result->fetch_assoc()) 
 
 								{
+					    			echo $row["customerNr"]." | " . $row["Name"]. " | " . $row["tel"]. " | " . $row["email"] . "<br/>";
 					    			echo $row["customerNr"]." | " . $row["fName"]." | " . $row["lName"]. " | " . $row["tel"]. " | " . $row["email"] . "<br/>";
 								}
 							} else {
@@ -51,6 +53,7 @@
 					?>
 		</div>
 	</div>
+
 </div>
 
 </body>

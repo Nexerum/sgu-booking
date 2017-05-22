@@ -32,7 +32,7 @@
 				}
 
 				
-				$sql = "SELECT * FROM kayak";
+				$sql = "SELECT * FROM kayaks";
 
 				$result = $conn->query($sql);
 
@@ -41,7 +41,8 @@
 
 						{
 
-			    			echo  $row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ."-". $row["color"] . "<br/>";
+			    			echo "<td><a href=\"delete.php?id=".$row['id']."\">Delete</a></td>"; 
+			    			echo	$row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ."-". $row["color"] . "<br/>";
 						}
 					} else {
 						echo "DIS AIN'T WORKING";

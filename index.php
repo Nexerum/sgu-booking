@@ -32,7 +32,7 @@
 				}
 
 				
-				$sql = "SELECT * FROM bookings, customer";
+				$sql = "SELECT * FROM bookings";
 
 				$result = $conn->query($sql);
 
@@ -41,11 +41,22 @@
 
 						{
 
-			    			echo  $row["fName"]." | ".$row["lName"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
+			    			echo  $row["bookingNr"]." | ".$row["customerNr"] . " | " . $row["nrKayak"] ."-". $row["hireFrom"] . " | " . $row["hireTo"] . " | " . $row["price"] . "<br/>";
 						}
 					} else {
 						echo "DIS AIN'T WORKING";
 					};
+				$sql = "SELECT FROM customers WHERE customerNr = $row['customerNr']";
+					while($row = $result->fetch_assoc()) 
+
+						{
+
+			    			echo  $row["Name"]."<br/>";
+						}
+					} else {
+						echo "DIS AIN'T WORKING";
+					};
+
 
 					$conn->close();
 			?>
@@ -53,34 +64,56 @@
 	</div>
 	  
 
+	<div class="col-md-10 form-group">
+		<div class="col-md-2 customer-form">
+			<form action="#" method="POST">
 
-	<form action="#" method="POST">
+				<p>
+					<label for="Name">Name</label>
+					<input class="form-control" type="text" name="Name">
+				</p>
 
-		<p>
-			<label for="firstName">First name</label>
-			<input type="text" name="fName">
-		</p>
+				<p>
+					<label for="phoneNumber">Phone number</label>
+					<input class="form-control" type="tel" name="tel">
+				</p>
 
-		<p>
-			<label for="lastName"> Last name</label>
-			<input type="text" name="lName">
-		</p>
+				<p>
+					<label for="e-mail"> e-mail</label>
+					<input class="form-control" type="email" name="email">
+				</p>
 
-		<p>
-			<label for="phoneNumber">Phone number</label>
-			<input type="tel" name="tel">
-		</p>
+				<input type="submit" name="submit">
 
-		<p>
-			<label for="e-mail"> e-mail</label>
-			<input type="email" name="email">
-		</p>
+			</form>
+		</div>
+			<br/>
+		<div class="col-md-2 col-md-offset-1 bookings-form">
+			<form class="form-group">
+				<p>
+					<label for="Name">Name</label>
+					<?php include("search.php");?>
+				</p>
 
-		<input type="submit" name="submit">
+				<p>
+					<label for="Amount of kayaks">How many kayaks?</label>
+					<input class="form-control" type="text" name="Amount-of-kayaks">
+				</p>
 
-	</form>
+				<p>
+					<label for="price">Price</label>
+					<input class="form-control" type="price" name="price">
+				</p>
+
+				<p>
+					<label for="payed">Is it payed?</label>	
+					<input class="form-control" type="payed" name="payed">
+				</p>
+
+			</form>
+		</div>
+	</div>
 </div>
-
 
 
 
@@ -115,4 +148,5 @@
 
  
 </body>
+
 </html>
