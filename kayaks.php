@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,41 +25,144 @@
 <div class="col-md-10 col-md-offset-1">
 	<div class="box">
 		<div class="box-inside">
-	
-			<?php
-				include('connect.php');
-				if ($conn->connect_error) {
-				    die("Connection failed: " . $conn->connect_error);
-				}
-
-				
-				$sql = "SELECT * FROM kayaks";
-
-				$result = $conn->query($sql);
-
-				if ($result->num_rows > 0) {
-					while($row = $result->fetch_assoc()) 
-
-						{
-							if ($row['hired'] == 1) {
-			    				echo "hired ";
-			    			}
-			    			else{
-
-			    			}
-
-			    			echo	$row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ." | ". $row["color"] . "<br/>";
-
+			<div class="boxColumn1">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
 						}
-					} else {
-						echo "DIS AIN'T WORKING";
-					};
 
-					$conn->close();
-			?>
+						
+
+						$sql = "SELECT * FROM kayaks";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["kayakNr"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn2">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM kayaks";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["type"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn3">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM kayaks";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["model"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn4">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM kayaks";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["material"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn5">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM kayaks";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["color"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+	
+
 		</div>
 	</div>
-
+	</br>
+	<?php 
+		include('connect.php');
+	?>
 	<form action="#" method="POST">
 
 		<p>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php //booking insert
 $servername = "localhost";
 $username = "sec_sgu";
@@ -12,6 +11,7 @@ $dbname = "SGU";
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
+	$conn->set_charset("utf8");
 
 	if($Name == NULL) {
 

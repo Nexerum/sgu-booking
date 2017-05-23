@@ -1,8 +1,9 @@
 .box{
 	border: solid black 0.1em;
-	height: 15em;
+	height: 25em;
 	overflow: auto;
-	width: 50em;
+	width: auto;
+	font-size: 16px;
 }
 
 .box-inside{
@@ -14,3 +15,54 @@
 	width: 300px;
 }
 
+.boxColumn1{
+	width: auto;
+	padding-right: 7px;
+	display: inline-block;
+	border-right: solid black 1px;
+	margin-right: 2px;
+}
+
+.boxColumn2{
+	width: auto;
+	padding-right: 7px;
+	display: inline-block;
+	border-right: solid black 1px;
+	margin-right: 2px;
+}
+
+.boxColumn3{
+	width: auto;
+	padding-right: 7px;
+	border-right: solid black 1px;
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.boxColumn4{
+	width: auto;
+	padding-right: 7px;
+	border-right: solid black 1px;
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.boxColumn5{
+	width: auto;
+	display:inline-block;
+	margin-right: 2px;
+}
+.kayaks{
+	background-color: red;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+}
+
+.noHire{
+	background-color: blue;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+	width: 4.5em;
+}

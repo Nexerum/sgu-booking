@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +26,112 @@
 <div class="col-md-10 col-md-offset-1">
 	<div class="box">
 		<div class="box-inside">
-			<?php
-						include('connect.php');
+			<div class="boxColumn1">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM customers";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["customerNr"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn2">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM customers";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["Name"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn3">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM customers";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["tel"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<div class="boxColumn4">
+				<?php
+						include('connection.php');
+						if ($conn->connect_error) {
+						    die("Connection failed: " . $conn->connect_error);
+						}
+
+						
+
+						$sql = "SELECT * FROM customers";
+
+						$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) 
+
+								{
+					    			echo $row["email"]."<br>";
+					    		} 
+					    	}else {
+					    		echo "DIS AIN'T WORKING";
+					    	};
+
+					    	$conn->close();
+					    ?>
+			</div>
+			<!-- <?php
+						/*include('connect.php');
 						if ($conn->connect_error) {
 						    die("Connection failed: " . $conn->connect_error);
 						}
@@ -49,8 +152,8 @@
 								echo "DIS AIN'T WORKING";
 							};
 
-							$conn->close();
-					?>
+							$conn->close();/*/
+					?> -->
 		</div>
 	</div>
 
