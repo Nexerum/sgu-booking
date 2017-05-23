@@ -1,4 +1,3 @@
-
 <?php
 $servername = "localhost";
 $username = "sec_sgu";
@@ -17,7 +16,7 @@ if ($_GET["delete"] == null) {
 }
 else {
 	$delete = $_GET["delete"];
-	$sql = "DELETE FROM `kayaks` WHERE kayakNr = '$delete'";
+	$sql = "DELETE FROM `customers` WHERE customerNr = '$delete'";
 	echo $delete;
 	if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -26,6 +25,5 @@ else {
 	}
 }
 
-header("Location: kayaks.php");
+header("Location: customers.php");
 ?> 
-

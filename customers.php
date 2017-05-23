@@ -43,7 +43,6 @@
 
 								{
 					    			echo $row["customerNr"]." | " . $row["Name"]. " | " . $row["tel"]. " | " . $row["email"] . "<br/>";
-					    			echo $row["customerNr"]." | " . $row["fName"]." | " . $row["lName"]. " | " . $row["tel"]. " | " . $row["email"] . "<br/>";
 								}
 							} else {
 								echo "DIS AIN'T WORKING";
@@ -53,10 +52,18 @@
 					?>
 		</div>
 	</div>
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
+	<form action="delete-customer.php" method="GET">
+		<p>
+			<label for="delete">Delete</label>
+			<input type="text" name="delete">
+		</p>
+
+		<p>
+			<input type="submit" name="submit">
+		</p>
+	</form>
+
 </div>
 
 </body>
