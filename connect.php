@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php //booking insert
 $servername = "localhost";
 $username = "sec_sgu";

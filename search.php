@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,4 +76,5 @@ $(document).ready(function(){
         <div class="result"></div>
     </div>
 </body>
+
 </html>
