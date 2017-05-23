@@ -40,8 +40,15 @@
 					while($row = $result->fetch_assoc()) 
 
 						{
+							if ($row['hired'] == 1) {
+			    				echo "hired ";
+			    			}
+			    			else{
+
+			    			}
 
 			    			echo	$row["kayakNr"]." | ".$row["type"]." | ".$row["model"] . " | " . $row["material"] ." | ". $row["color"] . "<br/>";
+
 						}
 					} else {
 						echo "DIS AIN'T WORKING";
